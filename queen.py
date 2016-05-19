@@ -1,11 +1,11 @@
 import numpy as np
 
 def isColumnSafe(chessboard, N, col):
-
+    
+    
     for i in range(0, N):
         if chessboard[i][col] :
             return 0
-    
     return 1
 
 def isRowSafe(chessboard, N, row):
@@ -13,13 +13,12 @@ def isRowSafe(chessboard, N, row):
     for i in range(0, N):
         if chessboard[row][i] :
             return 0
-    
     return 1
 
 
 def isDiagonalSafe(chessboard, N, row, col):
 
-    ## Check left upper diagnol
+    """Check left upper diagnol"""
 
     i = row
     j= col
@@ -35,7 +34,7 @@ def isDiagonalSafe(chessboard, N, row, col):
 
     
     
-    ## Check left lower diagnol
+    """Check left lower diagnol"""
 
     i=row
     j=col
@@ -49,7 +48,7 @@ def isDiagonalSafe(chessboard, N, row, col):
         j=j+1
 
     
-    ## Check right upper diagnol
+    """Check right upper diagnol"""
 
     i=row
     j=col
@@ -61,7 +60,7 @@ def isDiagonalSafe(chessboard, N, row, col):
         i=i-1
         j=j+1
 
-    ## Check right lower diagnol
+    """Check right lower diagnol"""
 
     i=row
     j=col
@@ -122,7 +121,6 @@ def solveQueen(chessboard, N, col):
 chessboard = np.zeros((8,8),dtype=np.int)
 N=8
 col=0
-
 solveQueen(chessboard, N, col)
 print(chessboard)
 
